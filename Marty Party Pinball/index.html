@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#08131b" />
+  <title>Marty Party 5 — Pinball</title>
+  <meta name="description" content="A playable party pinball table inspired by the Marty Party 5 cabinet." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <div class="brand"><span class="bolt">ϟ</span><div><strong>MARTY PARTY 5</strong><small>Birthday Pinball</small></div></div>
+      <div class="scorebox"><span>SCORE</span><strong id="score">000,000</strong></div>
+      <div class="stat high"><span>HIGH</span><b id="high-score">0</b></div>
+      <div class="stat"><span>BALL</span><b id="ball-count">1 / 3</b></div>
+      <button id="pause" aria-label="Pause game">PAUSE</button>
+      <button id="fullscreen" aria-label="Enter fullscreen">FULLSCREEN</button>
+      <button id="sound" aria-label="Toggle sound">SOUND ON</button>
+    </header>
+    <section class="machine" aria-label="Playable pinball table">
+      <div class="marquee"><span>★</span> PARTY TIME! <span>★</span></div>
+      <div class="table-wrap">
+        <div class="mission-bar"><span id="mission-name">MISSION: SPORTS SWEEP</span><div id="mission-lights"><i></i><i></i><i></i><i></i><i></i></div><b id="multiplier">1X</b></div>
+        <canvas id="game" width="886" height="1273" tabindex="0" aria-label="Pinball game played directly over the Marty Party cabinet. Use left and right arrows for flippers, space to launch, and P to pause."></canvas>
+        <div id="start-card" class="card">
+          <p class="eyebrow">MARTY'S 5TH BIRTHDAY</p>
+          <h1>READY TO<br><em>PARTY?</em></h1>
+          <p>Launch the ball, light the candles, and rack up the birthday bonus.</p>
+          <button id="start">START GAME</button>
+          <small>← → FLIPPERS &nbsp;•&nbsp; SPACE LAUNCH</small>
+        </div>
+        <div id="toast" aria-live="polite"></div>
+        <div id="combo" aria-live="polite"></div>
+        <div id="launch-meter"><span>LAUNCH POWER</span><div><i></i></div><small>HOLD SPACE</small></div>
+        <div id="pause-card" class="pause-card" aria-live="polite"><strong>GAME PAUSED</strong><span>Press P or Resume to keep partying</span><button id="resume">RESUME</button></div>
+        <div id="initials-card" class="pause-card initials-card"><strong>NEW HIGH SCORE!</strong><span>Enter your initials</span><input id="initials" maxlength="3" value="MRT" aria-label="Three initials"><button id="save-score">SAVE SCORE</button></div>
+        <div class="mobile-controls" aria-hidden="true">
+          <button id="left-btn" aria-label="Left flipper">◀</button><button id="launch-btn">HOLD TO LAUNCH</button><button id="right-btn" aria-label="Right flipper">▶</button>
+        </div>
+      </div>
+    </section>
+    <p class="hint">Keyboard: <kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd> to flip · hold/release <kbd>Space</kbd> to launch · <kbd>P</kbd> to pause · <kbd>R</kbd> to restart</p>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
